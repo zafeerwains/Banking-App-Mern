@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 
 //Craete Products
 
-router.post("/addProduct", async (req, res) => {
+router.post("/addTrasactions", async (req, res) => {
     try {
       const productData = new Products({
         _id: new mongoose.Types.ObjectId(),
