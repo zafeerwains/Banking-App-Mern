@@ -1,13 +1,13 @@
 const express = require('express');
 const router = express.Router();
-const Products=require("../models/productModel")
+const transactions=require("../models/transactionModel")
 const mongoose = require('mongoose');
 
-//Craete Products
+//Craete transactions
 
 router.post("/addTrasactions", async (req, res) => {
     try {
-      const productData = new Products({
+      const transactionData = new transactions({
         _id: new mongoose.Types.ObjectId(),
         name: req.body.name,
         price: req.body.price,
@@ -15,7 +15,7 @@ router.post("/addTrasactions", async (req, res) => {
         tags: req.body.tags,
         specifications: req.body.specifications
       });
-      const result = await productData.save();
+      const result = await transactionData.save();
       res.json(result);
     } catch (error) {
       console.log("error : ", error);
@@ -23,10 +23,10 @@ router.post("/addTrasactions", async (req, res) => {
     }
   });
 
-  //Read Products
+  //Read transactions
 
-  router.get("/allProducts", async (req, res) => {
-    const studentsData = await Products.find();
+  router.get("/alltransactions", async (req, res) => {
+    const studentsData = await transactions.find();
     res.json(studentsData);
   });
 
