@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const productSchema = new mongoose.Schema(
+const transactionSchema = new mongoose.Schema(
     {
         _id: mongoose.Schema.ObjectId,
         name: String,
