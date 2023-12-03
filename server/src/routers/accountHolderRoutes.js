@@ -20,7 +20,7 @@ router.post("/adduser", async (req, res) => {
     const result = await userData.save();
     res.json(result);
   } catch (error) {
-    console.log("error : ", error);
+    console.log("error : ",error);
     res.json({ error: "something went wrong!" });
   }
 });
